@@ -42,7 +42,7 @@ const posts = (await getCollection('blog')).sort(
 
 		{/* Featured Post */}
         {posts.filter(post => post.data.featured).map((featuredPost) => (
-            <div data-key={featuredPost.id} class="p-8 mb-16 cursor-pointer flex flex-col gap-6 rounded-xl border">
+            <div data-key={featuredPost.id} class="p-8 mb-16 flex flex-col gap-6 rounded-xl border">
               <div class="flex items-start justify-between mb-4">
                 <div class="px-3 py-1">
                   {featuredPost.data.category}
@@ -78,7 +78,7 @@ const posts = (await getCollection('blog')).sort(
           <div class="grid md:grid-cols-2 gap-8 mx-auto text-seasalt">
             {
 				posts.filter(post => !post.data.featured).map((post) => (
-					<div data-key={post.id} class="p-6 cursor-pointer flex flex-col gap-6 rounded-xl border">
+					<div data-key={post.id} class="p-6 flex flex-col gap-6 rounded-xl border">
 						<div class="flex items-center justify-between mb-3">
 							<div class="text-xs px-2 py-1">
 								{post.data.category}
