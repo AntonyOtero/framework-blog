@@ -5,7 +5,7 @@ import HeaderLink from './HeaderLink.astro';
 
 <header class="border-b border-border border-seasalt">
     <div class="container mx-auto px-6 py-4">
-        <nav class="flex items-center justify-between">
+        <nav class="flex flex-col md:flex-row gap-y-4 items-center justify-between">
             <div class="flex items-center space-x-2">
                 <div class="w-8 h-8 bg-seasalt rounded-full flex items-center justify-center">
                     <span class="text-night font-medium">
@@ -16,7 +16,7 @@ import HeaderLink from './HeaderLink.astro';
                     {SITE_TITLE}
                 </span>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="flex items-center space-x-8">
                 <a href="/" class="text-seasalt/70 hover:text-seasalt transition-opacity">
                     Home
                 </a>

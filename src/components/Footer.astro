@@ -4,12 +4,15 @@ const today = new Date();
 
 <footer class="border-t border-border border-seasalt">
   <div class="container mx-auto px-6 py-4">
-    <div class="flex flex-col sm:flex-row items-center justify-between text-sm">
-      <div class="text-seasalt/60 mb-4 sm:mb-0">
-        © {new Date().getFullYear()} Antony Otero Espinal. All Rights Reserved. • In Development
+    <div class="flex max-md:flex-col-reverse md:flex-row items-center md:justify-between text-sm">
+      <div class="md:flex gap-1 text-seasalt/60 max-md:text-center leading-relaxed max-md:mt-4 sm:mb-0">
+        <span class="block">© {new Date().getFullYear()} Antony Otero Espinal.</span>
+        <span class="block">All Rights Reserved.</span>
+        <span class="block max-md:hidden"> • </span>
+        <span class="block">In Development</span>
       </div>
       <div class="flex items-center space-x-6">
-        <a href="/" class="text-seasalt/60 hover:text-seasalt transition-opacity hover:underline">RSS Feed</a>
+        <a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="text-seasalt/60 hover:text-seasalt transition-opacity hover:underline">RSS Feed</a>
         <a href="/" class="text-seasalt/60 hover:text-seasalt transition-opacity hover:underline">Archive</a>
         <a href="/" class="text-seasalt/60 hover:text-seasalt transition-opacity hover:underline">Subscribe</a>
       </div>
