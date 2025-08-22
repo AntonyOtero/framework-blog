@@ -5,5 +5,5 @@ pubDate: 'Nov 31 2024'
 heroImage: '../../assets/blog-placeholder-2.jpg'
 category: 'foundation'
 duration: '5 min'
-featured: true
+featured: false
 ---

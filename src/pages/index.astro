@@ -32,13 +32,13 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 		<!-- Category Navigation -->
-		<div class="flex flex-wrap gap-4 mb-12">
+		<!-- <div class="flex flex-wrap gap-4 mb-12">
 		{posts.map((post) => (
-			<button class="px-6 cursor-pointer rounded-xl border">
+			<button class="px-6 py-2 cursor-pointer rounded-xl border">
 				{post.data.category}
 			</button>
 		))}
-		</div>
+		</div> -->
 
 		{/* Featured Post */}
         {posts.filter(post => post.data.featured).map((featuredPost) => (
