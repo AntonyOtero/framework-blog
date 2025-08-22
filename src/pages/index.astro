@@ -21,11 +21,11 @@ const posts = (await getCollection('blog')).sort(
 		<section class="flex flex-col justify-center container max-w-4xl mx-auto px-6 py-20">
 			<div class="">
 				<div class="mb-16">
-					<h1 class="text-6xl sm:text-8xl font-medium tracking-tight mb-8 font-serif">
+					<h1 class="text-4xl md:text-8xl font-medium tracking-tight mb-8 font-serif">
 						PRACTICAL
 						<span class="block">METAPHYSICS</span>
 					</h1>
-					<p class="text-xl text-seasalt/75 max-w-2xl leading-relaxed">
+					<p class="md:text-xl text-seasalt/75 max-w-2xl leading-relaxed">
 						Thoughts on living consciously, carrying responsibility, and forging meaning where none is given. A framework in progress.
 					</p>
 				</div>
@@ -44,7 +44,7 @@ const posts = (await getCollection('blog')).sort(
         {posts.filter(post => post.data.featured).map((featuredPost) => (
             <div data-key={featuredPost.id} class="p-8 mb-16 flex flex-col gap-6 rounded-xl border">
               <div class="flex items-start justify-between mb-4">
-                <div class="px-3 py-1">
+                <div class="px-3 py-1 capitalize">
                   {featuredPost.data.category}
                 </div>
                 <div class="flex items-center gap-4 text-sm text-muted-foreground">
@@ -68,7 +68,7 @@ const posts = (await getCollection('blog')).sort(
               <p class="text-lg text-seasalt/90 mb-6 leading-relaxed">
                 {featuredPost.data.description}
               </p>
-              <button onclick={`window.location.href='/blog/20250822075640-welcome'`} class="hover:border text-seasalt h-10 rounded-md px-8 cursor-pointer">
+              <button onclick={`window.location.href='/blog/202508220756-welcome'`} class="hover:border text-seasalt h-10 rounded-md px-8 cursor-pointer">
                 Read Full Article ›
               </button>
             </div>
@@ -77,10 +77,35 @@ const posts = (await getCollection('blog')).sort(
 		  {/* Posts Grid */}
           <div class="grid md:grid-cols-2 gap-8 mx-auto text-seasalt">
             {
-				posts.filter(post => !post.data.featured).map((post) => (
-					<div data-key={post.id} class="p-6 flex flex-col gap-6 rounded-xl border">
+				posts.filter(post => post.data.category === 'upcoming').map((post) => (
+					// <div data-key={post.id} class="p-6 flex flex-col gap-6 rounded-xl border">
+					// 	<div class="flex items-center justify-between mb-3">
+					// 		<div class="text-xs px-2 py-1 capitalize">
+					// 			{post.data.category}
+					// 		</div>
+					// 		<div class="flex items-center gap-3 text-xs text-muted-foreground">
+					// 			<span>
+					// 				{new Date(post.data.pubDate).toLocaleDateString('en-US', { 
+					// 					month: 'short', 
+					// 					day: 'numeric' 
+					// 				})}
+					// 			</span>
+					// 			<span>{post.data.duration}</span>
+					// 		</div>
+					// 	</div>
+					// 	<h3 class="text-xl font-medium mb-3 leading-tight">
+					// 		{post.data.title}
+					// 	</h3>
+					// 	<p class="text-seasalt/90 mb-4 leading-relaxed">
+					// 		{post.data.description}
+					// 	</p>
+					// 	<button class="border border-night hover:border-seasalt text-seasalt rounded-md cursor-pointer p-0 h-auto group text-primary">
+					// 		Read More ›
+					// 	</button>
+					// </div>
+					<div data-key={post.id} class="flex flex-col gap-6 rounded-xl border p-6 opacity-60 border-dashed relative overflow-hidden">
 						<div class="flex items-center justify-between mb-3">
-							<div class="text-xs px-2 py-1">
+							<div class="text-xs px-2 py-1 capitalize opacity-70">
 								{post.data.category}
 							</div>
 							<div class="flex items-center gap-3 text-xs text-muted-foreground">
@@ -99,9 +124,15 @@ const posts = (await getCollection('blog')).sort(
 						<p class="text-seasalt/90 mb-4 leading-relaxed">
 							{post.data.description}
 						</p>
-						<button class="border border-night hover:border-seasalt text-seasalt rounded-md cursor-pointer p-0 h-auto group text-primary">
+						<div class="text-sm text-muted-foreground/70">
+							In development
+						</div>
+						{/* <button class="border border-night hover:border-seasalt text-seasalt rounded-md cursor-pointer p-0 h-auto group text-primary">
 							Read More ›
-						</button>
+						</button> */}
+
+						{/* Subtle overlay to indicate unavailability */}
+                 		<div class="absolute inset-0 bg-background/20 pointer-events-none"></div>
 					</div>
 				))
 			}
@@ -109,9 +140,12 @@ const posts = (await getCollection('blog')).sort(
 
 		  {/* Load More */}
           <div class="text-center mt-16">
-            <button class="border text-seasalt hover:bg-berkeley h-10 rounded-md px-8 cursor-pointer">
-				Load More Posts
+			<button class="border text-seasalt hover:bg-berkeley h-10 rounded-md px-8 opacity-60 border-dashed pointer-events-none">
+				No More Posts
 			</button>
+            <!-- <button class="border text-seasalt hover:bg-berkeley h-10 rounded-md px-8 cursor-pointer">
+				Load More Posts
+			</button> -->
           </div>
         </div>
       </section>
