@@ -68,7 +68,7 @@ const posts = (await getCollection('blog')).sort(
               <p class="text-lg text-seasalt/90 mb-6 leading-relaxed">
                 {featuredPost.data.description}
               </p>
-              <button>
+              <button class="hover:border text-seasalt h-10 rounded-md px-8 cursor-pointer">
                 Read Full Article ›
               </button>
             </div>
@@ -99,7 +99,7 @@ const posts = (await getCollection('blog')).sort(
 						<p class="text-seasalt/90 mb-4 leading-relaxed">
 							{post.data.description}
 						</p>
-						<button class="p-0 h-auto group text-primary">
+						<button class="border border-night hover:border-seasalt text-seasalt rounded-md cursor-pointer p-0 h-auto group text-primary">
 							Read More ›
 						</button>
 					</div>
@@ -108,12 +108,12 @@ const posts = (await getCollection('blog')).sort(
           </div>
 
 		  {/* Load More */}
-          <!-- <div class="text-center mt-16">
-            <Button variant="outline" size="lg" class="px-8">
-              Load More Posts
-            </Button>
+          <div class="text-center mt-16">
+            <button class="border text-seasalt hover:bg-berkeley h-10 rounded-md px-8 cursor-pointer">
+				Load More Posts
+			</button>
           </div>
-        </div> -->
+        </div>
       </section>
 
 		<Footer />
