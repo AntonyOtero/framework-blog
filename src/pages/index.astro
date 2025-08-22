@@ -68,7 +68,7 @@ const posts = (await getCollection('blog')).sort(
               <p class="text-lg text-seasalt/90 mb-6 leading-relaxed">
                 {featuredPost.data.description}
               </p>
-              <button class="hover:border text-seasalt h-10 rounded-md px-8 cursor-pointer">
+              <button onclick={`window.location.href='/blog/20250822075640-welcome'`} class="hover:border text-seasalt h-10 rounded-md px-8 cursor-pointer">
                 Read Full Article ›
               </button>
             </div>
