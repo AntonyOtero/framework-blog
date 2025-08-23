@@ -2,7 +2,7 @@
 
 A personal project in practical metaphysics.
 
-This repository contains the source code for [framework.antonyotero.com](framework.antonyotero.com)
+This repository contains the source code for [framework.antonyotero.com](https://framework.antonyotero.com/)
 , where I am developing and sharing a system of thought and practice. The framework is not abstract philosophy alone; it is an attempt to live consciously, carry responsibility, and forge meaning where none is given.
 
 ## Status
