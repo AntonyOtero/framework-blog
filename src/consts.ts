@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Devotional Metaphysics';
-export const SITE_DESCRIPTION = 'Devoid of purpose, repurpose the void.';
+export const SITE_DESCRIPTION = 'A self-authored, existential, mythic-philosophical system.';
